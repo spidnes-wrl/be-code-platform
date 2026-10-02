@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Be Code — Maquette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="belly"><ellipse cx="66" cy="88" rx="19" ry="17" /></clipPath>
+        <symbol id="bee" viewBox="0 0 120 120">
+          <path d="M45 86 C38 54 48 14 72 14 C92 14 80 42 62 58" fill="none" stroke="#0b0b0b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="66" cy="88" rx="26" ry="24" fill="#0b0b0b"/>
+          <path d="M42 90 L6 106 L40 78 Z" fill="#0b0b0b" stroke="#0b0b0b" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M88 98 L114 100 L90 108 Z" fill="#0b0b0b" stroke="#0b0b0b" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="66" cy="88" rx="19" ry="17" fill="#FFB81C"/>
+          <g clip-path="url(#belly)" stroke="#0b0b0b" stroke-width="5" stroke-linecap="round">
+            <path d="M55 68 L47 106"/><path d="M69 66 L63 108"/><path d="M82 70 L78 106"/>
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="demo" role="tablist" aria-label="Navigation de la maquette">
+      <button data-go="home" class="on">Accueil</button>
+      <button data-go="signup">Inscription</button>
+      <button data-go="app">Be Code</button>
+      <button data-go="beeflex">Beeflex</button>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <main class="view on" id="v-home">
+      <div class="glow">
+        <div class="top">
+          <span class="logo"><svg><use href="#bee"/></svg>e Code</span>
+          <button class="btn k" data-go="signup">Se connecter</button>
+        </div>
+        <section class="hero">
+          <h1>Décris ton site. Be Code l'écrit.</h1>
+          <p>Ton premier site professionnel est gratuit, dans ta langue.</p>
+          <button class="btn y" data-go="signup">Commencer gratuitement</button>
+        </section>
+      </div>
+
+      <section class="plans">
+        <article class="plan">
+          <h3>Be Pro</h3>
+          <div class="p">Gratuit</div>
+          <ul>
+            <li>3 sites professionnels</li>
+            <li>Modification de certains éléments en direct</li>
+            <li>Domaine .be ou .code offert</li>
+            <li>Ensuite : questions, recherches et HTML simple</li>
+          </ul>
+          <button class="btn o" data-go="signup">Commencer</button>
+        </article>
+
+        <article class="plan">
+          <h3>Be Codex</h3>
+          <div class="p">Prix à définir</div>
+          <ul>
+            <li>Entre Be Pro et Beeflex</li>
+            <li>Détails à préciser</li>
+          </ul>
+          <button class="btn o" data-go="signup">Commencer</button>
+        </article>
+
+        <article class="plan star">
+          <h3>Beeflex</h3>
+          <div class="p">12 $ <small>/ mois</small></div>
+          <ul>
+            <li>Modification complète en temps réel</li>
+            <li>Domaines .com et .fr</li>
+          </ul>
+          <button class="btn k" data-go="beeflex">Essayer Beeflex</button>
+        </article>
+      </section>
+
+      <div class="foot">Be Code · créé par <b>Monestime Arvens Warley</b></div>
+    </main>
+
+    <main class="view" id="v-signup">
+      <div class="signup glow">
+        <div class="card">
+          <span class="logo"><svg><use href="#bee"/></svg>e Code</span>
+          <h2>Crée ton compte</h2>
+          <div class="field"><label for="em">E-mail</label><input id="em" type="email" placeholder="toi@exemple.com" /></div>
+          <div class="field"><label for="pw">Mot de passe</label><input id="pw" type="password" placeholder="8 caractères minimum" /></div>
+          <div class="field">
+            <label for="lg">Ta langue</label>
+            <select id="lg">
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="pt">Português</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+          <button class="btn y" id="signBtn">Créer mon compte</button>
+        </div>
+      </div>
+    </main>
+
+    <main class="view" id="v-app">
+      <div class="app" id="app" data-pane="chat">
+        <div class="head">
+          <span class="logo"><svg><use href="#bee"/></svg>e Code</span>
+          <button class="pill" id="levelPill">Be Pro · 3</button>
+        </div>
+
+        <div class="seg" id="seg">
+          <button data-p="chat" class="on">Chat</button>
+          <button data-p="preview">Aperçu</button>
+        </div>
+
+        <div class="work">
+          <section class="chatcol">
+            <div class="scroll" id="scroll">
+              <div class="welcome" id="welcome">
+                <span class="mark"><svg><use href="#bee"/></svg></span>
+                <h1 id="hello"></h1>
+                <span class="chev" aria-hidden="true">⌄</span>
+                <div class="ideas">
+                  <button class="idea" id="idea"></button>
+                  <div class="dots" id="dots"></div>
+                  <span class="lbl" id="ideasLbl"></span>
+                </div>
+              </div>
+              <div id="msgs" style="display:flex;flex-direction:column"></div>
+            </div>
+
+            <div class="composer">
+              <div class="box">
+                <input id="inp" autocomplete="off" />
+                <div class="row">
+                  <button class="chip" id="flexChip">+ Beeflex</button>
+                  <button class="send" id="sendBtn" aria-label="Envoyer">
+                    <svg viewBox="0 0 24 24" fill="#0b0b0b" stroke="#0b0b0b" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 5.2 L19.2 18 Q19.7 19 18.6 19 L5.4 19 Q4.3 19 4.8 18 Z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pane" id="pane">
+            <div class="dom" id="dom"></div>
+            <div class="stage" id="stage"></div>
+            <div class="editor" id="editor">
+              <input class="t" id="edText" aria-label="Texte" />
+              <div class="sw">Texte <span id="swText"></span></div>
+              <div class="sw">Fond <span id="swBg"></span></div>
+              <div class="sw size">Taille <input type="range" id="edSize" min="12" max="72" value="18" /></div>
+              <div class="limit">Be Pro : tu modifies le texte. Beeflex débloque les couleurs, les tailles et tout le reste.</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div class="sheet" id="sheet">
+      <div class="in">
+        <h3>Ton niveau</h3>
+        <button class="opt" data-lv="pro"><span><b>Be Pro</b><small>3 sites professionnels, modification de certains éléments</small></span><span class="pr">Gratuit</span></button>
+        <button class="opt" data-lv="codex"><span><b>Be Codex</b><small>Entre Be Pro et Beeflex, détails à préciser</small></span><span class="pr">Prix à définir</span></button>
+        <button class="opt" data-lv="flex"><span><b>Beeflex</b><small>Modification complète en temps réel, domaines .com et .fr</small></span><span class="pr">12 $ / mois</span></button>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
