@@ -1,8 +1,13 @@
-node_modules/
 .env
-.env.*
+.env.local
+.env.*.local
+node_modules/
+.vercel/
 .DS_Store
 npm-debug.log*
-coverage/
+yarn-debug.log*
+yarn-error.log*
 *.log
-/data/store.json
+.next/
+dist/
+build/

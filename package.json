@@ -1,16 +1,30 @@
 {
   "name": "be-code-platform",
   "version": "1.0.0",
+  "description": "Be Code - AI Creative Concept Engine by Monestime Arvens Warley | NATE Technology",
   "private": true,
   "type": "module",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node api/index.js",
+    "dev": "node --watch api/index.js"
   },
+  "keywords": [
+    "ai",
+    "web-creation",
+    "concept-engine",
+    "nate",
+    "be-code"
+  ],
+  "author": "Monestime Arvens Warley",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "openai": "^4.40.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
